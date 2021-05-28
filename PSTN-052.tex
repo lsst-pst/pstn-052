@@ -25,10 +25,36 @@ here's an abstract
 
 \section{Introduction}
 
-\begin{figure}
-\plotone{plots/roll_mod2_sdf0_10mixed_Count_night_night_gt_365_and_night_lt_547_HEAL_SkyMap.pdf}
-\caption{hooray}
-\end{figure}
+Motivation for rolling cadence:  The SRD says the WFD region should have 825 visits (spread over the ugrizy filters) after 10 years. This works out to one observation every 4.4 days (or one observation every 3.3 days if we have a 9-month observing season). For many transient phenomenon, including SNe Ia, this cadence is not ideal and something slightly higher (e.g., one observation every 2 days) would be preferred.
+
+There is no free lunch. Going to higher cadence at one time demands that there be a corresponding time of lower candence.
+
+XXX--plot of cumulative number of observations over time.
+
+
+Some limitations we have on rolling cadence:
+
+The Science Requirements Document (SRD) places tight constriants on how well Rubin must be able to measure the proper motion on stars. The uncertainty on proper motion is dominated by the baseline of the observations--namely, it is optimal to have observations spaced as far appart as possible. This means we need to maximize the number of observations taken in the first and last observing seasons for every point in the sky. Since the SRD requirement applies to the entire WFD region, this essentially means we need to have even sky coverage (no rolling) at the start and end of the survey. 
+
+When the survey begins, there will be a region of sky already partially though it's observing season. Thus, we need to observe with a uniform cadence for 1.5 years at the start and end of the survey. If we observe for 1.5 years uniform at the start, we must also observe for 1.5 years at the end. That leaves 7 potential years for rolling. 
+
+
+Another limitation is ensuring we have adequate images to construct image differencing templates. 
+
+Yet another potential limitation is the nature of the Rubin alert stream. If we construct the rolling cadence such that we concentrate observations on the southern sky for a year, that will mean the alert stream will be concentrated in the southern sky, and a large fraction of potential follow-up facilities (those in Hawaii and the American SW) will be unable to participate in transient follow-up for an entire year.
+
+
+
+Rolling introduces a number of free parameters
+\begin{itemize}
+    \item{How strong should the rolling be?}
+    \item{Do we want to have repeat visits in a night?}
+    \item{Do we want to encourage/discourage nightly cadence?}
+    \item{How do we select the shape of the rolling regions?}
+\end{itemize}
+
+
+
 
 \section{Lots of plots}
 
