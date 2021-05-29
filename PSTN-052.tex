@@ -27,10 +27,19 @@ here's an abstract
 
 Motivation for rolling cadence:  The SRD says the WFD region should have 825 visits (spread over the ugrizy filters) after 10 years. This works out to one observation every 4.4 days (or one observation every 3.3 days if we have a 9-month observing season). For many transient phenomenon, including SNe Ia, this cadence is not ideal and something slightly higher (e.g., one observation every 2 days) would be preferred.
 
-There is no free lunch. Going to higher cadence at one time demands that there be a corresponding time of lower cadence.
+There is no free lunch. Going to higher cadence at one time demands that there be a corresponding time of lower cadence. In Figure~\ref{fig:ideal_foot} we show the ideal cumulative number of observations for different observing strategies. The cadence one can request is highly constrained. For one, we desire the final survey to be uniform, so all the strategies need to end at the same level. If one wants to include an increased cadence, that necessarily means that point in the sky will also need to have a corresponding period of lower cadence. Similarly, if a point has a higher cadence, another point at similar RA must also have a lower cadence (we cannot increase the observing cadence simultaneously everywhere).
 
-XXX--plot of cumulative number of observations over time.
 
+
+\begin{figure}
+\plotone{plots/footprint_ideal.pdf}
+\caption{A comparison of how the cumulative number of observations varies at 4 points in the sky and for non-rolling and rolling cadences. \label{fig:ideal_foot}}
+\end{figure}
+
+\begin{figure}
+\plotone{plots/actual_footprint.pdf}
+\caption{\label{fig:actual_foot}}
+\end{figure}
 
 Some limitations we have on rolling cadence:
 
@@ -41,22 +50,20 @@ When the survey begins, there will be a region of sky already partially though i
 
 Another limitation is ensuring we have adequate images to construct image difference templates. 
 
-Yet another potential limitation is the nature of the Rubin alert stream. If we construct the rolling cadence such that we concentrate observations on the southern sky for a year, that will mean the alert stream will be concentrated in the southern sky, and a large fraction of potential follow-up facilities (those in Hawaii and the American SW) will be unable to participate in transient follow-up for an entire year.
+Yet another potential limitation is the nature of the Rubin alert stream. If we construct the rolling cadence such that we concentrate observations on the southern sky for a year, that will mean the alert stream will be concentrated in the southern sky, and a large fraction of potential follow-up facilities (those in Hawaii and the American SW) will be unable to participate in transient follow-up for an entire year. Having multiple declination bands for rolling also helps the scheduler work around lunar avoidance.
 
 
 
 Rolling introduces a number of free parameters
 \begin{itemize}
     \item{How strong should the rolling be?}
-    \item{Do we want to have repeat visits in a night?}
+    \item{Do we want to have repeat visits (beyond a pair) in a night?}
     \item{Do we want to encourage/discourage nightly cadence?}
     \item{What should the footprint be?}
     \item{How many rolling bands should there be?}
 \end{itemize}
 The dimensionality of the problem is clearly an issue.
 
-
-XXX--introduce the footprint object. Have some plots.
 
 For the scheduler, we define a footprint object that computes desired fraction of observations that a point on the sky should receive as function of time. Each filter has it's own footprint object. In Figure XXX, we plot the results of this footprint object for a single point on the sky.
 
@@ -112,10 +119,7 @@ For the scheduler, we define a footprint object that computes desired fraction o
 \end{figure}
 
 
-A note of caution about the number of SNe metric--I'm not convinced it includes galactic dust, so there may be some additional sensitivity to survey footprint that isn't taken into account yet.
-
-table with:
-run, n SNe, fraction of fast micro, fraction of slow micro, max obs in season, min obs in season
+A note of caution about the number of SNe metric--I'm not convinced it includes Galactic dust, so there may be some additional sensitivity to survey footprint that isn't taken into account yet.
 
 
 \begin{table}
@@ -145,23 +149,26 @@ six\_stripe\_nslice6 &             41416.11 &                    0.34 &         
 \end{table}
 
 
+
+One consequence rolling cadence--data releases will not be uniform! XXX--add plots showing state of survey at various years
+
 \section{Conclusions}
 
 When does rolling work well? 
 
 When is the rolling impact minimal?
 
-If a transient is somewhat recovered in the baseline, going to rolling cadence may not add much boost since some seaons go to lower cadence.
+If a transient is somewhat recovered in the baseline, going to rolling cadence may not add much boost since some seasons go to lower cadence.
 
-If transient recovery requires higher cadence blue filter coverage. All of the above simulations favor observing in redder filters in bright time. xxx-insert figure showing 
+If transient recovery requires higher cadence blue filter coverage. All of the above simulations favor observing in redder filters in bright time. xxx-insert figure showing hourglass. 
 
 
-Note, rolling itself does not modify the season length.  We can modify the season length, but these simulations all use the same season length. There have been proposals to have ``accordion cadence" for the DDFs. While this is easy to do for DDFs, having an extended season in the broad areas could be difficult to implement. One would need to take care to extend the season length without introducing undesirable side-effects such as forcing blue filters in bright time.
+Note, rolling itself does not modify the season length.  We can modify the season length, but these simulations all use the same 6-month season. There have been proposals to have ``accordion cadence" for the DDFs. While this is easy to do for DDFs, having an extended season in the broad areas could be difficult to implement. One would need to take care to extend the season length without introducing undesirable side-effects such as forcing blue filters in bright time.
 
 
 The number of Type Ia SNe takes a big hit moving from the baseline footprint to the compromise footprint\_6, but even modest rolling on footprint\_6 generates more SNe than the baseline. 
 
-The fraction of slow microlensing events does not seem to be sensitive to footprint or rolling. The events are so long, that they almost always get discovered.
+The fraction of slow microlensing events does not seem to be sensitive to footprint or rolling. The events are so long that they almost always get discovered.
 
 Slow microlensing events are very sensitive to both footprint and rolling strategy. Note we do not expect the recovery fraction to exceed $\sim50\%$\ simply because many events will happen when the bulge is not observable. 
 
