@@ -38,7 +38,7 @@ There is no free lunch. Going to higher cadence at one time demands that there b
 
 \begin{figure}
 \plotone{plots/actual_footprint.pdf}
-\caption{\label{fig:actual_foot}}
+\caption{A plot of the actual cumulative number of visits (all filters) for the point RA,dec = (0, -20).  \label{fig:actual_foot}}
 \end{figure}
 
 Some limitations we have on rolling cadence:
@@ -162,10 +162,11 @@ six\_stripe\_nslice6 &             41416.11 &                    0.34 &         
 \includegraphics[width=1.75in]{plots/yearly_release/rolling_nm_scale0_90_nslice3_fpw0_9_nrw1_0v1_7_Count_night_lt_365_and_note_not_like_DD_HEAL_SkyMap.pdf}
 \includegraphics[width=1.75in]{plots/yearly_release/rolling_nm_scale0_90_nslice3_fpw0_9_nrw1_0v1_7_Count_nightlt1095_and_note_not_like_DD_HEAL_SkyMap.pdf}
 \includegraphics[width=1.75in]{plots/yearly_release/rolling_nm_scale0_90_nslice3_fpw0_9_nrw1_0v1_7_Count_night_lt_2556_and_note_not_like_DD_HEAL_SkyMap.pdf}
-
+\caption{Example of how rolling cadence results in non-uniform coverage for annual data releases. Left shows surveys after 1 year, middle 3 years, right 7 years. Top row show the baseline with no rolling, middle half-sky rolling, bottom third-rolling. \label{fig:years}}
 \end{figure}
 
-One consequence rolling cadence--data releases will not be uniform! XXX--add plots showing state of survey at various years
+An important consequence of using rolling cadence is that many annual data releases will not be uniform. Figure~\ref{fig:years} shows how rolling results in uneven coverage of the WFD region after years 3 and 7. This is a consequence of demanding rolling happen for entire observing seasons. 
+
 
 \section{Conclusions}
 
@@ -185,8 +186,12 @@ The number of Type Ia SNe takes a big hit moving from the baseline footprint to 
 
 The fraction of slow microlensing events does not seem to be sensitive to footprint or rolling. The events are so long that they almost always get discovered.
 
-Slow microlensing events are very sensitive to both footprint and rolling strategy. Note we do not expect the recovery fraction to exceed $\sim50\%$\ simply because many events will happen when the bulge is not observable. 
+Fast microlensing events are very sensitive to both footprint and rolling strategy. Note we do not expect the recovery fraction to exceed $\sim50\%$\ simply because many events will happen when the bulge is not observable. 
 
+
+Figure~\ref{fig:classics} shows the final visit distribution for the baseline and rolling cadences are all nearly identical. This implies static science at the {\emph{end of the survey}} should be unaffected by rolling cadence. During the survey, the WFD will not have even coverage, which will impact static science.
+
+What about a year with bad weather? There is concern that if we have good weather in the first year of rolling, and then poor weather the next, something bad will happen. In this case, we expect the scheduler will compensate the next year to get back on schedule either by rolling slightly less, or using a year that would have normally been uniform to psudo-roll and return the survey to uniformity. With 2.5 years of uniform cadence at the end of the survey, we have plenty of time to recover from particularly bad weather years.
 
 
 % Include all the relevant bib files.
