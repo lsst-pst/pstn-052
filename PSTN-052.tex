@@ -1,5 +1,5 @@
 \documentclass[modern]{aastex62}
-
+\usepackage{hyperref}
 % lsstdoc documentation: https://lsst-texmf.lsst.io/lsstdoc.html
 \input{meta}
 
@@ -31,6 +31,7 @@ There is no free lunch. Once we have defined a survey footprint and telescope ef
 
 The SRD also places tight constraints on the uncertainty in stellar proper motions. Proper motion uncertainties are dominated by the quality of astrometric measurements at the start and end of the survey. Thus, for all our rolling cadence simulations we use uniform coverage in the first and final 1.5 years of the survey. If we start rolling before 1.5 years, some areas of the sky will not have had a full observing season completed, thus they will have lower final proper motion precision than the areas of the sky that were covered for a full season.
 
+
 \begin{figure}
 \plotone{plots/footprint_ideal.pdf}
 \caption{A comparison of how the cumulative number of observations varies at 4 points in the sky for non-rolling and rolling cadences. Note how when one point on the sky has higher cadence, a point at the same RA but different dec has lower cadence. Also, points at different RA's have different phases. \label{fig:ideal_foot}}
@@ -53,7 +54,7 @@ Yet another potential limitation is the nature of the Rubin alert stream. If we 
 
 \section{Simulations}
 
-Here we present results from the v1.7.1 cadence simulations.  In Figure~\ref{fig:classics}, we show our classic baseline footprint with half, and third-sky rolling. Figure~\ref{fig:fulldisk} shows a similar footprint, but with the galactic plane included as part of the WFD area. Finally, Figure~\ref{fig:compsky} uses a footprint that avoids dust extinction, while including the bulge, an outer MW disk bridge, and the Magellanic Clouds in the WFD area. Figure~\ref{fig:compsky} also includes a 6-band rolling cadence. 
+Here we present results from the v1.7.1 cadence simulations. Additional plots of the v1.7.1 runs as well as the databases for the runs have been posted online \footnote{\url{http://astro-lsst-01.astro.washington.edu:8081/}, \url{https://epyc.astro.washington.edu/~lynnej/opsim_downloads/fbs_1.7.1/}}.  In Figure~\ref{fig:classics}, we show our classic baseline footprint with half, and third-sky rolling. Figure~\ref{fig:fulldisk} shows a similar footprint, but with the galactic plane included as part of the WFD area. Finally, Figure~\ref{fig:compsky} uses a footprint that avoids dust extinction, while including the bulge, an outer MW disk bridge, and the Magellanic Clouds in the WFD area. Figure~\ref{fig:compsky} also includes a 6-band rolling cadence. 
 
 Table~\ref{tab:metrics} shows results of several metrics on the v1.7.1 simulations. We compute the expected number of well sampled Type Ia SNe (via the DESC metric)and the fraction of fast microlensing events and slow microlensing events recovered. We also show the maximum and minimum number of observations in a season overlapping RA,dec=0,-20. For all the footprints, rolling cadence gives a clear boost to the number of SNe recovered.  
 
@@ -205,6 +206,7 @@ Rolling cadence does not modify the observing season length. Because we use decl
 
 Figure~\ref{fig:classics} shows the final visit distribution for the baseline and rolling cadences are all nearly identical. This implies static science {\emph{at the end of the survey}} should be minimally affected by rolling cadence. During the survey, the WFD will not have even coverage, which will impact static science.
 
+We could expand the half-sky rolling to include and additional rolling cycle (for a total of 4 high cadence and 4 low cadence seasons). It will impact the proper motion precision, but could be a trade off worth exploring. This could also decrease the flexibility to recover from poor weather years near the end of the survey.
 
 
 % Include all the relevant bib files.
