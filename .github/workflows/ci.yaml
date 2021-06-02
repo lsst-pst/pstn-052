@@ -43,4 +43,4 @@ jobs:
           LTD_PASSWORD: ${{ secrets.LTD_PASSWORD }}
           LTD_USERNAME: ${{ secrets.LTD_USERNAME }}
         run: |
-          lander --upload --pdf PSTN-052.pdf --ltd-product pstn-052
+          lander --upload --pdf PSTN-052.pdf --ltd-product pstn-052 --title "Survey Strategy: Rolling Cadence" --handle "PSTN-052" --author "Peter Yoachim"
