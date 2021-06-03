@@ -56,7 +56,7 @@ Yet another potential limitation is the nature of the Rubin alert stream. If we 
 
 Here we present results from the v1.7.1 cadence simulations. Additional plots of the v1.7.1 runs as well as the databases for the runs have been posted online \footnote{\url{http://astro-lsst-01.astro.washington.edu:8081/}, \url{https://epyc.astro.washington.edu/~lynnej/opsim_downloads/fbs_1.7.1/}}.  In Figure~\ref{fig:classics}, we show our classic baseline footprint with half, and third-sky rolling. Figure~\ref{fig:fulldisk} shows a similar footprint, but with the galactic plane included as part of the WFD area. Finally, Figure~\ref{fig:compsky} uses a footprint that avoids dust extinction, while including the bulge, an outer MW disk bridge, and the Magellanic Clouds in the WFD area. Figure~\ref{fig:compsky} also includes a 6-band rolling cadence. 
 
-Table~\ref{tab:metrics} shows results of several metrics on the v1.7.1 simulations. We compute the expected number of well sampled Type Ia SNe (via the DESC metric)and the fraction of fast microlensing events and slow microlensing events recovered. We also show the maximum and minimum number of observations in a season overlapping RA,dec=0,-20. For all the footprints, rolling cadence gives a clear boost to the number of SNe recovered.  
+Table~\ref{tab:metrics} shows results of several metrics on the v1.7.1 simulations. We compute the expected number of well sampled Type Ia SNe (via the DESC metric with dust extinction added) and the fraction of fast microlensing events and slow microlensing events recovered. We also show the maximum and minimum number of observations in a season overlapping RA,dec=0,-20. For all the footprints, rolling cadence gives a clear boost to the number of SNe recovered.  
 
 \begin{figure}
 \includegraphics[height=1.25in, width=1.75in]{plots/baseline_nexp2_v1.7.1/baseline_nexp2_v1_7_1_Count_HEAL_SkyMap.pdf}
@@ -129,29 +129,23 @@ Table~\ref{tab:metrics} shows results of several metrics on the v1.7.1 simulatio
  &           N    & Fraction  & Fraction     &   Number & at RA,dec=0,-20 \\
 \toprule
 
-baseline\_nexp2 &             30894.34 &                    0.15 &                    0.95 &     95 &     75 \\
-rolling\_nslice2 &             39372.89 &                    0.15 &                    0.95 &    151 &     28 \\
-rolling\_nslice3 &             39516.23 &                    0.16 &                    0.95 &    220 &     31 \\
-
+baseline\_nexp2 &              22879.30 &                    0.15 &                    0.95 &     95 &     75 \\
+rolling\_nslice2 &             29020.63 &                    0.15 &                    0.95 &    151 &     28 \\
+rolling\_nslice3 &             28971.53 &                    0.16 &                    0.95 &    220 &     31 \\
 
 \hline
-full\_disk &             27770.56 &                    0.44 &                    0.95 &     97 &     67 \\
-full\_disk\_nslice2 &             38607.76 &                    0.42 &                    0.95 &    153 &     35 \\
-full\_disk\_nslice3 &             39104.88 &                    0.39 &                    0.95 &    204 &     26 \\
-                                
-                                   
+full\_disk &                      19965.27 &                    0.44 &                    0.95 &     97 &     67 \\
+full\_disk\_nslice2 &             27043.85 &                    0.42 &                    0.95 &    153 &     35 \\
+full\_disk\_nslice3 &             27473.19 &                    0.39 &                    0.95 &    204 &     26 \\
+                                                             
 \hline
-footprint\_6 &             22330.58 &                    0.44 &                    0.95 &    108 &     54 \\
-bulge\_roll\_nslice2 &             37674.05 &                    0.42 &                    0.95 &    125 &     24 \\
-bulge\_roll\_nslice3 &             38094.83 &                    0.40 &                    0.95 &    234 &     31 \\
-six\_stripe\_nslice6 &             41416.11 &                    0.34 &                    0.95 &    406 &      8 \\
+footprint\_6 &                     17817.33 &                    0.44 &                    0.95 &    108 &     54 \\
+bulge\_roll\_nslice2 &             29456.26 &                    0.42 &                    0.95 &    125 &     24 \\
+bulge\_roll\_nslice3 &             29754.55 &                    0.40 &                    0.95 &    234 &     31 \\
+six\_stripe\_nslice6 &             30850.44 &                    0.34 &                    0.95 &    406 &      8 \\
 \hline
 \end{tabular}
 \end{table}
-
-A note of caution about the number of SNe metric--I'm not convinced it includes Galactic dust extinction, so there may be some additional sensitivity to survey footprint that isn't taken into account yet.
-
-
 
 
 \section{Implementation Details}
