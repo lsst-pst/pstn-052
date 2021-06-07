@@ -29,7 +29,7 @@ We cover the basics of how a rolling cadence survey strategy can work, and revie
 
 The Rubin Science Requirements Document (SRD) stimulated that Rubin should survey 18,000 square degrees with a median of 825 visits (spread over the $ugrizy$\ filters) after 10 years. This works out to one observation every 4.4 days (or one observation every 2.6 days if we have a 7-month observing season). For many transient phenomenon, including SNe Ia, this cadence is not ideal and something slightly higher (e.g., one observation every 2 days) would be preferred. 
 
-There is no free lunch. Once we have defined a survey footprint and telescope efficiency, the mean observing cadence is highly constrained. The additional preference to take observations near the meridian further constrains the possible cadence and season length. Going to higher cadence at one time demands that there be a corresponding period of lower cadence to ensure footprint coverage uniformity. Similarly, if an area has a higher cadence, another point at similar RA must also have a lower cadence because the telescope efficiency is fixed.  In Figure~\ref{fig:ideal_foot} we show the ideal cumulative number of observations for different observing strategies. 
+There is no free lunch. Once we have defined a survey footprint and telescope efficiency, the mean observing cadence is highly constrained. The additional preference to take observations near the meridian further constrains the possible cadence and season length. Going to higher cadence at one time demands that there be a corresponding period of lower cadence to ensure footprint coverage uniformity. Similarly, if an area has a higher cadence, another point at similar RA must also have a lower cadence because the telescope efficiency is fixed.  In Figure~\ref{fig:ideal_foot} we show the ideal cumulative number of observations for different observing strategies. Figure~\ref{fig:ideal_foot} also shows that {\bf{rolling and non-rolling cadences have the same mean and median cadence}}. When comparing simulations, it is important not to make approximations that average an observing cadence, as the effects of rolling will be lost.
 
 The SRD also places tight constraints on the uncertainty in stellar proper motions. Proper motion uncertainties are dominated by the quality of astrometric measurements at the start and end of the survey. Thus, for all our rolling cadence simulations we use uniform coverage in the first and final 1.5 years of the survey. If we start rolling before 1.5 years, some areas of the sky will not have had a full observing season completed, thus they will have lower final proper motion precision than the areas of the sky that were covered for a full season.
 
@@ -54,11 +54,27 @@ Yet another potential limitation is the nature of the Rubin alert stream. If we 
 
 
 
+
 \section{Simulations}
 
-Here we present results from the v1.7.1 cadence simulations. Additional plots of the v1.7.1 runs as well as the databases for the runs have been posted online \footnote{\url{http://astro-lsst-01.astro.washington.edu:8081/}, \url{https://epyc.astro.washington.edu/~lynnej/opsim_downloads/fbs_1.7.1/}}.  In Figure~\ref{fig:classics}, we show our classic baseline footprint with half, and third-sky rolling. Figure~\ref{fig:fulldisk} shows a similar footprint, but with the galactic plane included as part of the WFD area. Finally, Figure~\ref{fig:compsky} uses a footprint that avoids dust extinction, while including the bulge, an outer MW disk bridge, and the Magellanic Clouds in the WFD area. Figure~\ref{fig:compsky} also includes a 6-band rolling cadence. 
+Here we present results from the v1.7.1 cadence simulations. Additional plots of the v1.7.1 runs as well as the databases for the runs have been posted online \footnote{\url{http://astro-lsst-01.astro.washington.edu:8081/}, \url{https://epyc.astro.washington.edu/~lynnej/opsim_downloads/fbs_1.7.1/}}.  In Figure~\ref{fig:classics}, we show our classic baseline footprint with half, and third-sky rolling. Figure~\ref{fig:fulldisk} shows a similar footprint, but with the galactic plane included as part of the WFD area. Finally, Figure~\ref{fig:compsky} uses a footprint that avoids dust extinction, while including the bulge, an outer MW disk bridge, and the Magellanic Clouds in the WFD area. Figure~\ref{fig:compsky} also includes a 6-band rolling cadence.  {\bf{These rolling cadence experiments are a significant improvement over earlier simulations (v1.5, v1.6, v1.7), and should be considered as replacements for those runs.}}
+
+The runs discussed in this document are:
+\begin{itemize}
+    \item{{baseline\_nexp2\_v1.7.1\_10yrs.db}}
+    \item{{rolling\_nm\_scale0.90\_nslice2\_fpw0.9\_nrw1.0v1.7\_10yrs.db}}
+    \item{{rolling\_nm\_scale0.90\_nslice3\_fpw0.9\_nrw1.0v1.7\_10yrs.db}}
+    \item{{full\_disk\_v1.7\_10yrs.db}}
+    \item{{full\_disk\_scale0.90\_nslice2\_fpw0.9\_nrw1.0v1.7\_10yrs.db}}
+    \item{{full\_disk\_scale0.90\_nslice3\_fpw0.9\_nrw1.0v1.7\_10yrs.db}}
+    \item{{footprint\_6\_v1.7.1\_10yrs.db}}
+    \item{{bulge\_roll\_scale0.90\_nslice2\_fpw0.9\_nrw1.0v1.7\_10yrs.db}}
+    \item{{bulge\_roll\_scale0.90\_nslice3\_fpw0.9\_nrw1.0v1.7\_10yrs.db}}
+    \item{{six\_stripe\_scale0.90\_nslice6\_fpw0.9\_nrw0.0v1.7\_10yrs.db}}
+\end{itemize}
 
 Table~\ref{tab:metrics} shows results of several metrics on the v1.7.1 simulations. We compute the expected number of well sampled Type Ia SNe (via the DESC metric with dust extinction added) and the fraction of fast microlensing events and slow microlensing events recovered. We also show the maximum and minimum number of observations in a season overlapping RA,dec=0,-20. For all the footprints, rolling cadence gives a clear boost to the number of SNe recovered.  
+
 
 \begin{figure}
 \includegraphics[height=1.25in, width=1.75in]{plots/baseline_nexp2_v1.7.1/baseline_nexp2_v1_7_1_Count_HEAL_SkyMap.pdf}
