@@ -25,7 +25,7 @@ We cover the basics of how a rolling cadence survey strategy can work, and revie
 
 \section{Introduction}
 
-The Rubin Science Requirements Document (SRD) stipulated that Rubin should survey 18,000 square degrees with a median of 825 visits (spread over the $ugrizy$\ filters) after 10 years. This works out to one observation every 4.4 days (or one observation every 2.6 days if we have a 7-month observing season). For many transient phenomenon, including SNe Ia, this cadence is not ideal and something slightly higher (e.g., one observation every 2 days) would be preferred. 
+The Rubin Science Requirements Document \citep[SRD;][]{LPM-17} stipulated that Rubin should survey 18,000 square degrees with a median of 825 visits (spread over the $ugrizy$\ filters) after 10 years. This works out to one observation every 4.4 days (or one observation every 2.6 days if we have a 7-month observing season). For many transient phenomenon, including SNe Ia, this cadence is not ideal and something slightly higher (e.g., one observation every 2 days) would be preferred.
 
 There is no free lunch. Once we have defined a survey footprint and telescope efficiency, the mean observing cadence is highly constrained. The additional preference to take observations near the meridian further constrains the possible cadence and season length. Going to higher cadence at one time demands that there be a corresponding period of lower cadence to ensure footprint coverage uniformity. Similarly, if an area has a higher cadence, another point at similar RA must also have a lower cadence because the telescope efficiency is fixed.  In Figure~\ref{fig:ideal_foot} we show the ideal cumulative number of observations for different observing strategies. Figure~\ref{fig:ideal_foot} also shows that {\bf{rolling and non-rolling cadences have the same mean and median cadence}}. When comparing simulations, it is important not to make approximations that average an observing cadence, as the effects of rolling will be lost.
 
@@ -71,7 +71,7 @@ The runs discussed in this document are:
     \item{{six\_stripe\_scale0.90\_nslice6\_fpw0.9\_nrw0.0v1.7\_10yrs.db}}
 \end{itemize}
 
-Table~\ref{tab:metrics} shows results of several metrics on the v1.7.1 simulations. We compute the expected number of well sampled Type Ia SNe (via the DESC metric with dust extinction added) and the fraction of fast microlensing events and slow microlensing events recovered. We also show the maximum and minimum number of observations in a season overlapping RA,dec=0,-20. For all the footprints, rolling cadence gives a clear boost to the number of SNe recovered.  
+Table~\ref{tab:metrics} shows results of several metrics on the v1.7.1 simulations. We compute the expected number of well sampled Type Ia SNe (via the DESC metric with dust extinction added) and the fraction of fast microlensing events and slow microlensing events recovered. We also show the maximum and minimum number of observations in a season overlapping RA,dec=0,-20. For all the footprints, rolling cadence gives a clear boost to the number of SNe recovered.
 
 
 \begin{figure}
@@ -116,7 +116,7 @@ Table~\ref{tab:metrics} shows results of several metrics on the v1.7.1 simulatio
 \includegraphics[height=1.25in, width=1.75in]{plots/bulge_roll_scale090_nslice3_fpw09_nrw10v17_spotc.pdf} \\
 \includegraphics[height=1.25in, width=1.75in]{plots/six_stripe_scale0.90_nslice6_fpw0.9_nrw0.0v1.7/six_stripe_scale0_90_nslice6_fpw0_9_nrw0_0v1_7_Count_HEAL_SkyMap.pdf}
 \includegraphics[height=1.25in, width=1.75in]{plots/six_stripe_scale0.90_nslice6_fpw0.9_nrw0.0v1.7/six_stripe_scale0_90_nslice6_fpw0_9_nrw0_0v1_7_Count_night_gt_913_125000_and_night_lt_1278_375000_and_note_not_like_DD_HEAL_SkyMap.pdf}
-\includegraphics[height=1.25in, width=1.75in]{plots/six_stripe_scale090_nslice6_fpw09_nrw00v17_spotc.pdf} 
+\includegraphics[height=1.25in, width=1.75in]{plots/six_stripe_scale090_nslice6_fpw09_nrw00v17_spotc.pdf}
 \caption{Like Figure~\ref{fig:classics}, but for a compromise footprint that includes the bulge, a plane bridge, and the Magellanic Clouds as part of WFD. Here we have also included an extreme rolling with 6 bands. This results in a point on the sky having one high cadence season and 5 low cadence seasons. Note that such extreme rolling means that there will be multiple years where northern telescopes have little to no chance to follow up Rubin alerts. \label{fig:compsky}}
 \end{figure}
 
@@ -153,7 +153,7 @@ rolling\_nslice3 &             28971.53 &                    0.16 &             
 full\_disk &                      19965.27 &                    0.44 &                    0.95 &     97 &     67 \\
 full\_disk\_nslice2 &             27043.85 &                    0.42 &                    0.95 &    153 &     35 \\
 full\_disk\_nslice3 &             27473.19 &                    0.39 &                    0.95 &    204 &     26 \\
-                                                             
+
 \hline
 footprint\_6 &                     17817.33 &                    0.44 &                    0.95 &    108 &     54 \\
 bulge\_roll\_nslice2 &             29456.26 &                    0.42 &                    0.95 &    125 &     24 \\
@@ -201,7 +201,7 @@ There are some transient science cases that may still fail to see improvement wi
 
 For fast transients ($\sim 1$\ day), rolling may not show much improvement since we are intentionally suppressing taking more than 2 images in a night. However, the 6-band rolling should be useful for fast transient science.
 
-Rolling cadence does not modify the observing season length. Because we use declination bands, the scheduler varies the seasons length across the sky to compensate for under/over subscription. We can potentially extend the observing seasons to better observe long time scale transients, but only by lowering the cadence. 
+Rolling cadence does not modify the observing season length. Because we use declination bands, the scheduler varies the seasons length across the sky to compensate for under/over subscription. We can potentially extend the observing seasons to better observe long time scale transients, but only by lowering the cadence.
 
 
 
